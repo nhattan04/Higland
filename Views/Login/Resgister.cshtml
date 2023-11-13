@@ -1,0 +1,43 @@
+﻿@model CSDL.Models.tblUser
+
+@{
+    ViewBag.Title = "Resgister";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+
+<h2>Resgister</h2>
+@using (Html.BeginForm())
+{
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.userName)</th>
+        <td>
+            @Html.TextBoxFor(m => m.userName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(m => m.userName)
+        </td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.userPass)</th>
+        <td>@Html.PasswordFor(m => m.userPass)</td>
+        <td>
+            @Html.ValidationMessageFor(m => m.userPass)
+        </td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.RePass)</th>
+        <td>@Html.PasswordFor(m => m.RePass)</td>
+        <td>
+            @Html.ValidationMessageFor(m => m.RePass)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <input type="submit" value="Register" class="btn btn-success" />
+        </td>
+    </tr>
+</table>
+
+}
+

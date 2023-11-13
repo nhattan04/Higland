@@ -1,0 +1,56 @@
+﻿@model CSDL.Models.tblUser
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MasterLayoutPage.cshtml";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("AuthenLogin", "Login", FormMethod.Post))
+{
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.userID)</th>
+        <td>
+            @Html.PasswordFor(m => m.userID)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(m => m.userID)
+            @    if (ViewBag.ErrorID != null) 
+            { 
+                <h5>@ViewBag.ErrorID</h5>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.userName)</th>
+        <td>
+            @Html.TextBoxFor(m => m.userName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(m => m.userName)
+        </td>
+    </tr>
+    <tr>
+
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.userPass)</th>
+        <td>
+            @Html.PasswordFor(m => m.userPass)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(m => m.userPass)
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="3">
+            <input type="submit" value="Login" class="btn btn-success" />
+        </td>
+    </tr>
+    <tr>
+</table>
+}
+
+
